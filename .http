@@ -1,4 +1,5 @@
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbmVqZW1wbG8iLCJyb2xlIjoxLCJleHAiOjE3MjM1OTQxNDZ9.XWB4ktB0WotZ1KScdSYaPnxO19gbIGZaI9dJRBbf0IQ
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbmVqZW1wbG8iLCJyb2xlIjoxLCJleHAiOjE3MjM1OTg3Mjd9.FAU1cYmax-YNr82B_K3d-TY9o0RN5Fg9OZeqkpAPPC8
+
 
 ### register
 GET http://localhost:5000/auth/register
@@ -57,14 +58,14 @@ Authorization: Bearer {{token}}
 
 
 ### update user
-PUT http://localhost:5000/home/users/1
+PUT http://localhost:5000/home/users/4
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "name":"Usuarioejemplo22",
+  "name":"Usuarioejemplo24",
   "surname":"ejemplo22",
-  "username":"usuarioejemplo22",
+  "username":"usuarioejemplo25",
   "password": "password22"
 }
 
