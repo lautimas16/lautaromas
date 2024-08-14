@@ -1,9 +1,9 @@
 from sqlalchemy import create_engine
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.sql import text
-from src.database.connection import get_server_connection, get_db_connection, Base
-from src.models.users import User
-from src.models.post import Post
+from app.database.connection import get_server_connection, get_db_connection, Base
+from app.models.users import User
+from app.models.post import Post
 
 def create_db():
     try:

@@ -1,22 +1,21 @@
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..Vl3CLl9ZCxGvHw2yH_-YFVR0OEo6GM0lTdnVVS9Wpcc
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbmVqZW1wbG8iLCJyb2xlIjoxLCJleHAiOjE3MjM1OTQxNDZ9.XWB4ktB0WotZ1KScdSYaPnxO19gbIGZaI9dJRBbf0IQ
 
-### GET REGISTER 
-
+### register
 GET http://localhost:5000/auth/register
 Content-Type: application/json
 
-### REGISTER USER
+### register user
 POST http://localhost:5000/auth/register
 Content-Type: application/json
 
 {
-  "name" : "juani",
-  "surname": "delosrios",
-  "username":"juani",
+  "name" : "usuario",
+  "surname": "ejemplo",
+  "username":"usuarioejemplo",
   "password":"password"
 }
 
-### REGISTER ADMIN
+### register admin
 POST http://localhost:5000/auth/register
 Content-Type: application/json
 
@@ -25,10 +24,10 @@ Content-Type: application/json
   "surname": "ejemplo",
   "username":"adminejemplo",
   "password":"password",
-  "id_rol":1
+  "id_rol": 1
 }
 
-### LOGIN USER
+### login user
 POST http://localhost:5000/auth/login
 Content-Type: application/json
 
@@ -37,7 +36,7 @@ Content-Type: application/json
   "password": "password"
 }
 
-### LOGIN ADMIN
+### login admin
 POST http://localhost:5000/auth/login
 Content-Type: application/json
 
@@ -46,44 +45,60 @@ Content-Type: application/json
   "password": "password"
 }
 
-### GET ALL USERS
+### get all users
 GET http://localhost:5000/home/users
 Authorization: Bearer {{token}}
 
 
 
-### GET USERS BY ID
+### get user by id
 GET http://localhost:5000/home/users/1
 Authorization: Bearer {{token}}
 
 
-### UPDATE USER
+### update user
 PUT http://localhost:5000/home/users/1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "name":"Usuarioejemplo22"
+  "name":"Usuarioejemplo22",
+  "surname":"ejemplo22",
+  "username":"usuarioejemplo22",
+  "password": "password22"
 }
 
-###delete user
-DELETE http://localhost:5000/users/1
+### delete user
+DELETE http://localhost:5000/home/users/2
 Authorization: Bearer {{token}}
 
-#COURSES BP
+# POSTS
 
-###create course
-POST http://localhost:5000/courses
+### create post
+POST http://localhost:5000/home/post
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "name": "test-course"
+  "author": "LAUTIMAGIA",
+  "title": "Resumen DESARROLLO",
+  "body": "Aqui va el resumen" 
 }
 
-###get all courses
-GET http://localhost:5000/courses
+### get all posts
+GET http://localhost:5000/home/post
 Authorization: Bearer {{token}}
+Content-Type: application/json
+
+### update posts
+PUT http://localhost:5000/home/post/2
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Resumen DESARROLLO 2",
+  "body": "Aqui va el resumen"
+}
 
 ###get course by id
 GET http://localhost:5000/courses/3
